@@ -9,11 +9,11 @@ int main() {
     int n, num, menor, suma = 0;
     cin >> n;
 
-    cin >> num; // Leer el primer juguete
+    cin >> num; 
     menor = num;
     suma = num;
 
-    for (int i = 1; i < n; i++) { // Empezamos desde 1 porque ya leímos el primero
+    for (int i = 1; i < n; i++) {
         cin >> num;
         suma += num;
         if (num < menor) {
