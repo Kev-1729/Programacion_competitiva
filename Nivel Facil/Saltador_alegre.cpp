@@ -18,18 +18,16 @@ int main(){
         bool esAlegre = true;
         for(int i=1;i<n-1;i++){
             int dif=abs(v[i]-v[i+1]);
-
             if (dif<1||dif>= n||dif==temp) {
                 esAlegre=false;
                 break;
             }
             temp=dif;
         }
-		if(esAlegre){
+	if(esAlegre)
             cout<<"Alegre"<<endl;
-        }else {
+        else 
             cout<<"No alegre"<<endl;
-        }
     }
     return 0;
 }
