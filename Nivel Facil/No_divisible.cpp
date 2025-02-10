@@ -1,28 +1,36 @@
 #include <iostream>
+
 using namespace std;
 
-long long sumatoria(long long n) {
-    return (n * (n + 1)) / 2;
+long long sumatoria(long long x) {
+    return x * (x + 1) / 2;
 }
 
-long long suma_rango(long long A, long long B, long long C) {
-    long long suma_total = sumatoria(B) - sumatoria(A - 1);
-    long long suma_multiplos = C * (sumatoria(B / C) - sumatoria((A - 1) / C));
-    return suma_total - suma_multiplos;
+long long sum_multiples(long long n, long long c) {
+    if (n < 0) return 0;
+    long long m = n / c;
+    return c * sumatoria(m);
 }
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(0);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    
+    int t;
+    cin >> t;
+    
+    while (t--) {
+        long long a, b, c;
+        cin >> a >> b >> c;
 
-    int T;
-    cin >> T;
-
-    while (T--) {
-        long long A, B, C;
-        cin >> A >> B >> C;
-        cout << suma_rango(A, B, C) << "\n";
+        if (a > b) swap(a, b);
+        
+        long long suma_total = sumatoria(b) - sumatoria(a - 1);
+        long long suma_multiplos = sum_multiples(b, c) - sum_multiples(a - 1, c);
+        
+        cout << (suma_total - suma_multiplos) << '\n';
     }
-
+    
     return 0;
 }
