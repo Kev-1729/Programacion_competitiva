@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int mcd(int a, int b) {
@@ -10,11 +9,9 @@ int mcd(int a, int b) {
     }
     return a;
 }
-
 int mcm(int a, int b) {
     return (a / mcd(a, b)) * b; 
 }
-
 int main() {
     int n;
     cin >> n;
